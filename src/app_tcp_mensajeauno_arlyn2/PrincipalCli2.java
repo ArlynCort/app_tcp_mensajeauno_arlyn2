@@ -43,7 +43,7 @@ public class PrincipalCli2 extends javax.swing.JFrame {
         this.getContentPane().add(jLabel1);
 
         userComboBox = new JComboBox<>();
-        userComboBox.setBounds(40, 180, 200, 30);
+        userComboBox.setBounds(40, 200, 200, 30);
         this.getContentPane().add(userComboBox);
 
         mensajesTxt = new JTextArea();
@@ -67,6 +67,11 @@ public class PrincipalCli2 extends javax.swing.JFrame {
         jLabel2.setEnabled(false);
         jLabel2.setBounds(20, 70, 100, 30);
         this.getContentPane().add(jLabel2);
+
+        JLabel destinatarioLabel = new JLabel("Destinatario:");
+        destinatarioLabel.setFont(new Font("Verdana", 0, 14));
+        destinatarioLabel.setBounds(30, 170, 100, 30);
+        this.getContentPane().add(destinatarioLabel);
 
         btEnviar = new JButton("Enviar");
         btEnviar.setFont(new Font("Verdana", 0, 14));
