@@ -102,7 +102,7 @@ public class PrincipalSrv2 extends javax.swing.JFrame {
                 serverSocket = new ServerSocket(PORT);
                 mensajesTxt.append("Servidor TCP en ejecución: " + addr + " ,Puerto " + serverSocket.getLocalPort() + "\n");
 
-                // Simulación de progreso (puedes ajustar el tiempo de espera)
+                // Simulación de progreso 
                 for (int i = 0; i <= 100; i += 10) {
                     final int progress = i;
                     SwingUtilities.invokeLater(() -> {
@@ -132,7 +132,7 @@ public class PrincipalSrv2 extends javax.swing.JFrame {
                         userListModel.addElement(nombreUsuario);
                     }
 
-                    // Notificar a todos los clientes del nuevo usuario
+               
                     broadcastMessage("USUARIO:" + nombreUsuario);
 
                     // Enviar lista de usuarios conectados al nuevo usuario
@@ -144,7 +144,7 @@ public class PrincipalSrv2 extends javax.swing.JFrame {
 
                     mensajesTxt.append(nombreUsuario + " se ha conectado.\n");
 
-                    // Manejar la comunicación con el cliente
+                    
                     new Thread(new ClientHandler(clientSocket, nombreUsuario, out, in)).start();
                 }
             } catch (IOException e) {
